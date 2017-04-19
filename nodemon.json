@@ -1,0 +1,7 @@
+{
+  "verbose": false,
+  "watch": ["config/", "src/**/*.ts"],
+  "execMap": {
+    "ts": "ts-node"
+  }
+}

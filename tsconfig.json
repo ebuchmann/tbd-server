@@ -1,0 +1,23 @@
+{
+  "compileOnSave": true,
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/test.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "prod",
+    "target": "ES2017",
+    "module": "commonjs",
+    "sourceMap": true,
+    "lib": ["es2017", "dom"],
+    "noImplicitReturns": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "pretty": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
+}
