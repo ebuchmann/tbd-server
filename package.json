@@ -1,25 +1,29 @@
 {
-  "name": "server",
+  "name": "tbd-server",
   "version": "1.0.0",
-  "description": "A server for stuff",
+  "description": "Node server for unknown project",
   "main": "index.js",
   "scripts": {
     "start": "echo starting DEV MODE server -- not for production \\(press Ctrl-C to end\\) && nodemon -e ts,js,json src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Eric Buchmann <me@ebuchmann.com>",
   "license": "ISC",
   "dependencies": {
+    "config": "^1.25.1",
     "kcors": "^1.3.2",
     "koa": "^2.2.0",
     "koa-router": "^7.1.1",
-    "koa-socket": "^4.4.0"
+    "koa-socket": "^4.4.0",
+    "pg": "^6.1.5",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.30.4"
   },
   "devDependencies": {
-    "@types/node": "^7.0.13",
+    "@types/node": "^7.0.14",
     "nodemon": "^1.11.0",
     "ts-node": "^3.0.2",
     "tslint": "^5.1.0",
-    "typescript": "^2.2.2"
+    "typescript": "^2.3.1"
   }
 }

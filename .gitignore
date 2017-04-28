@@ -45,3 +45,7 @@ jspm_packages
 
 # Ignore output of Babel
 prod
+
+# Config files
+/config/development.js
+/config/production.js
