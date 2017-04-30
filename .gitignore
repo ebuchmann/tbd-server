@@ -49,3 +49,4 @@ prod
 # Config files
 /config/development.js
 /config/production.js
+knexfile.js

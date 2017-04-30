@@ -1,9 +1,9 @@
 import * as Router from 'koa-router';
-import { models } from '../models';
+import { Monster } from '../models';
 
 export const router = new Router;
 export const path = '/accounts';
 
 router.get('/', async (ctx, _next) => {
-  return ctx.body = await models.Monster.create({ name: 'Lion', hp: 40, exp: 150 });
+  return ctx.body = await Monster.query();
 });
