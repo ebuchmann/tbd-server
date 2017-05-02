@@ -4,7 +4,7 @@ import { Account } from './models';
 const passport = require('koa-passport');
 
 passport.serializeUser((user, done) => {
-  done(null, user._id);
+  done(null, user.id);
 });
 
 passport.deserializeUser(async (id, done) => {
@@ -23,17 +23,11 @@ passport.deserializeUser(async (id, done) => {
 const LocalStrategy = require('passport-local').Strategy;
 passport.use(new LocalStrategy(async (username, password, done) => {
   try {
-    const user = await Account.query().where('username', username).limit(1);
+    const [user] = await Account.query().where('username', username).limit(1);
 
-    if (!user) done(null, false);
+    if (!user || !await argon2.verify(user.password, password)) done(null, false);
 
-    const match = await argon2.verify(user[0].password, password);
-
-    if (user && match) {
-      done(null, user);
-    } else {
-      done(null, false);
-    }
+    done(null, user);
   } catch (error) {
     done(error);
   }

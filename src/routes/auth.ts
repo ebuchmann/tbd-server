@@ -6,7 +6,7 @@ import { isAuthenticated } from '../auth';
 export const router = new Router;
 export const path = '/auth';
 
-router.post('/api/login', async (ctx, _next) => {
+router.post('/login', async (ctx, _next) => {
   return passport.authenticate('local', (err, user, info, status) => {
     if (user === false) {
       ctx.body = { success: false };
@@ -18,12 +18,12 @@ router.post('/api/login', async (ctx, _next) => {
   })(ctx, _next);
 });
 
-router.get('/api/logout', async (ctx, _next) => {
+router.get('/logout', async (ctx, _next) => {
   ctx.logout();
   ctx.status = 200;
 });
 
-router.get('/api/get-account', isAuthenticated, async (ctx, _next) => {
-  ctx.body = ctx.state.user;
+router.get('/get-account', isAuthenticated, async (ctx, _next) => {
+  ctx.body = ctx.session;
   ctx.status = 200;
 });

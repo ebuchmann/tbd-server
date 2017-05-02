@@ -22,7 +22,7 @@ export default class Account extends Model {
     properties: {
       id: { type: 'integer' },
       username: { type: 'string', minLength: 1, maxLength: 16 },
-      password: { type: 'string', minLength: 8, maxLength: 96 },
+      password: { type: 'string' },
       email: { type: 'string' },
     },
   };
